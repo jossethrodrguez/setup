@@ -32,33 +32,9 @@ sudo apt install software-properties-common
 2. change the name of the older `.bashrc` file to `.bashrc.backup`
 3. move the `.bashrc` of this repository to home directory
 4. move `nvim` directory of this repository to the home `.config` repository, then move out `nvim` directory and remove the empty `.config` directory
-5. finally move each file in this repo, one by one but left `.git` directory until the end, and delete the directory of this repository   
-# [brew](https://brew.sh/)
-```bash
-# Run these two commands in your terminal to add Homebrew to your PATH:
-    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/josseth/.profile
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# Install Homebrew's dependencies if you have sudo access:
-    sudo apt-get install build-essential
-#  For more information, see:
-    https://docs.brew.sh/Homebrew-on-Linux
-# We recommend that you install GCC:
-    brew install gcc
-# Run brew help to get started
-# Further documentation:
-    https://docs.brew.sh
-
-openjdk@17 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
-because this is an alternate version of another formula.
-
-If you need to have openjdk@17 first in your PATH, run:
-  echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@17/bin:$PATH"' >> ~/.profile
-
-For compilers to find openjdk@17 you may need to set:
-  export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openjdk@17/include"
+5. finally move each file in this repo, one by one but left `.git` directory until the end, and delete the directory of this repository
 
 
-```
 # [Git](https://git-scm.com/)
 ```bash
 # Add Git's repository:
@@ -88,6 +64,33 @@ eval $(ssh-agent -s)
 # Add ssh key to the system:
 ssh-add .ssh/id_rsa
 ```
+# [brew](https://brew.sh/)
+```bash
+# Run these two commands in your terminal to add Homebrew to your PATH:
+    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/josseth/.profile
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Install Homebrew's dependencies if you have sudo access:
+    sudo apt-get install build-essential
+#  For more information, see:
+    https://docs.brew.sh/Homebrew-on-Linux
+# We recommend that you install GCC:
+    brew install gcc
+# Run brew help to get started
+# Further documentation:
+    https://docs.brew.sh
+
+openjdk@17 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
+because this is an alternate version of another formula.
+
+If you need to have openjdk@17 first in your PATH, run:
+  echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@17/bin:$PATH"' >> ~/.profile
+
+For compilers to find openjdk@17 you may need to set:
+  export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openjdk@17/include"
+
+
+```
+
 # [Node.js](https://nodejs.org/en/)
 
 ```bash
