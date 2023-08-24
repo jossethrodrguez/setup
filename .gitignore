@@ -1,0 +1,12 @@
+# UNTRACKING
+/*
+/*/*
+
+# TRACKING
+!.bashrc
+!.gitignore
+!.config/
+!.config/nvim/
+!.config/nvim/*
+!.config/.gitignore
+!README.md
