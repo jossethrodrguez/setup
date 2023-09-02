@@ -11,4 +11,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("josseth.plugins")
+require("lazy").setup({
+    {import = "josseth.plugins"},
+    {import = "josseth.plugins.lsp"}
+}, {
+  install = {
+    colorscheme = { "colorscheme catppuccin-latte" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
