@@ -120,15 +120,15 @@ use ```fc-list``` to check already fonts installed, and add new fonts to ```/usr
 we are using [NvChad](https://nvchad.com/docs/quickstart/install), install ripgrep first
 Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/stable) and download `nvim.appimage` and this file to `/usr/bin/nvim` using `sudo` privilege.
 ## NvChad commands:
-- <spc> th: choose theme
-- :TSInstall <language> , TSInstallInfo: check info
-- <CTRL> n: nvim-tree
-- <CTRL> ff: telescope
-- <spc> ch: Cheat sheet
+- ```<spc> th```: choose theme
+- ```:TSInstall <language>``` , ```TSInstallInfo```: check info
+- ```<CTRL> n```: nvim-tree
+- ```<CTRL> ff```: telescope
+- ```<spc> ch```: Cheat sheet
 ### Windows navigation:
 - :vsp, :sp open windows (<CTRL> h, j, k, l)
 - <spc> h, v : open terminal window 
-# LSP config:
+### LSP config:
 add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
 ```neovim
 local plugins = {
