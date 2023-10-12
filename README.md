@@ -112,98 +112,57 @@ export PATH=$PATH: <route>
 ```
 
 # [Neovim](https://neovim.io/)
+install a [NerdFont](https://www.nerdfonts.com/font-downloads)
+use ```fc-list``` to check already fonts installed, and add new fonts to ```/usr/fonts/``` path
+we are using [NvChad](https://nvchad.com/docs/quickstart/install), install ripgrep first
 Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/stable) and download `nvim.appimage` and this file to `/usr/bin/nvim` using `sudo` privilege.
-## Files and Directories structure
-- `~/.config/nvim/init.vim`: Main file, load our configuration.
-    - `lua/josseth/`
-        - `core/`: 
-          - `colorscheme.lua`: 
-          - `keymap.lua`
-          - `options.lua`
-            
-        - `plugins/`
-          - `autopairs.lua`
-          - `comment.lua`
-          - `gitsigns.lua`
-          - `lualine.lua`
-          - `nvim-cmp.lua`
-          - `nvim-tree.lua`
-          - `telescope.lua`
-          - `treesitter.lua`
-          - `lsp/`
-              - `lspconfig.lua`
-              - `lspsaga.lua`
-              - `mason.lua`
-              - `null-ls.lua`
-            
-        - `plugins-setup.lua`
-## Plugins
-First install Plugin Manager:
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
- ```
-(**important**: Open `plugins-setup.lua` file with Neovim and save it `:w`, this is necessary to install plugins) 
-#### Plugin Manager
-- [wbthomason/packer](https://github.com/wbthomason/packer.nvim) - Popular plugin manager
+## NvChad commands:
+- <spc> th: choose theme
+- :TSInstall <language> , TSInstallInfo: check info
+- <CTRL> n: nvim-tree
+- <CTRL> ff: telescope
+- <spc> ch: Cheat sheet
+### Windows navigation:
+- :vsp, :sp open windows (<CTRL> h, j, k, l)
+- <spc> h, v : open terminal window 
+# LSP config:
+add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
+```neovim
+local plugins = {
+    {
+        "williamboman/mason.nvim",
+        opts = {
+                ensure_installed = {
+                    "pyright"
+            },
+        },
+    },   
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.configs.lspconfig"
+        end,
+    },
+}
+return plugins
+```
+and add ```M.plugins = "custom.plugins``` to ```chadrc.lua``` file in the same folder.
+restart neovim, and type: ```:MasonInstallAll``` command.
 
-#### Dependency For Other Plugins
-- [nvim-lua/plenary](https://github.com/nvim-lua/plenary.nvim) - Useful lua functions other plugins use
+create a file ```~/.config/nvim/lua/custom/```, paste:
+```
+local config = require("plugins.configs.lspconfig")
 
-#### Preferred Colorscheme
-- [bluz71/vim-nightfly-guicolors](https://github.com/bluz71/vim-nightfly-guicolors)
+local on_attach = config.on_attach
+local capabilities = config.capabilities
 
-#### Navigating Between Neovim Windows and Tmux
-- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+local lspconfig = require("lspconfig")
 
-#### Essentials
-- [tpope/vim-surround](https://github.com/tpope/vim-surround) - manipulate surroundings with "ys", "ds", and "cs"
-- [vim-scripts/ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister) - replace things with register with "gr"
-- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) - toggle comments with "gc"
-
-#### File Explorer
-- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-
-#### VS Code Like Icons
-- [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-
-#### Status Line
-- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-
-#### Fuzzy Finder
-- [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - Dependency for better performance
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy Finder
-
-#### Autocompletion
-- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion plugin
-- [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - Completion source for text in current buffer
-- [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) - Completion source for file system paths
-
-#### Snippets
-- [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine
-- [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Useful snippets for different languages
-- [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) - Completion source for snippet autocomplete
-
-#### Managing & Installing Language Servers, Linters & Formatters
-- [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-
-#### LSP Configuration
-- [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) - Bridges gap b/w mason & lspconfig
-- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Easy way to configure lsp servers
-- [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - Smart code autocompletion with lsp
-- [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) - Enhanced uis for lsp
-- [jose-elias-alvarez/typescript.nvim](https://github.com/jose-elias-alvarez/typescript.nvim) - Additional functionality for typescript server
-- [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - Vs Code Like Icons for autocompletion
-
-#### Formatting & Linting
-- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - Easy way to configure formatters & linters
-- [jayp0521/mason-null-ls.nvim](https://github.com/jayp0521/mason-null-ls.nvim) - Bridges gap b/w mason & null-ls
-
-#### Syntax Highlighting & Autoclosing Things
-- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configuration
-- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Autoclose brackets, parens, quotes, etc...
-- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Autoclose tags
-
-#### Git
-- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Show line modifications on left hand side
-
+lspconfig.pyright.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetype = {"python"},
+})
+```
+type: ```:LspInfo``` 

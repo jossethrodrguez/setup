@@ -5,9 +5,9 @@
 # TRACKING
 !.bashrc
 !.gitignore
-!.config/
-!.config/nvim/
-!.config/nvim/*
-!.config/nvim-backup/*
-!.config/.gitignore
+# !.config/
+# !.config/nvim/
+# !.config/nvim/*
+# !.config/nvim-backup/*
+# !.config/.gitignore
 !README.md
