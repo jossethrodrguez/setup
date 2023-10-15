@@ -189,10 +189,3 @@ cd ~
 bash
 ```
 Install [SDK manager](https://sdkman.io/install), and finally type ```sdk install gradle 7.5```
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile"
- > workspace/android-projects/NewApp/app/src/proguard-rules.pro"
-```
-
