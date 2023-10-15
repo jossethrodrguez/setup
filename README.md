@@ -171,7 +171,7 @@ lspconfig.pyright.setup({
 type: ```:LspInfo``` 
 
 # Android Development withot Android Studio
-1 - Download [Android Command line tools](https://developer.android.com/studio), then execute this script in ```Downloads/``` directory:
+##1 - Download [Android Command line tools](https://developer.android.com/studio), then execute this script in ```Downloads/``` directory:
 ```bash
 unzip commandlinetools-linux*.zip -d android-sdk
 mv android-sdk ~
@@ -180,10 +180,12 @@ cd ~/android-sdk/cmdline-tools
 mv * latest/
 ~/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools"
 ```
-
+Then...
 ```bash
 ~/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform;android-30.0.3"
 echo "export ANDROID_HOME=~/android-sdk" >> ~/.bashrc; source ~/.bashrc
 cd ~
 bash
 ```
+Finally install [SDK manager](https://sdkman.io/install)
+## 2 - 
