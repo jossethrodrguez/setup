@@ -175,6 +175,7 @@ type: ```:LspInfo```
 ```bash 
   unzip commandlinetools-linux*.zip -d android-sdk;mv android-sdk ..; cd ~/android-sdk/cmdlinetools; mkdir latest; mv * latest/; cd bin; ./sdkmanager "platform-tools"
 ```
-then ```bash 
+then 
+```bash 
   ./sdkmanager "platform;android-30.0.3"; echo "export ANDROID_HOME=~/android-sdk" >> .bashrc; source .bashrc; bash
 ```
