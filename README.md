@@ -192,6 +192,7 @@ Install [SDK manager](https://sdkman.io/install), and finally type ```sdk instal
 ## Creating Android Project
 ```bash
 mkdir workspace/android-projects/NewApp
+mkdir workspace/android-projects/
 cd workspace/android-projects/NewApp
 gradle init
 echo "// list of repositories to find plugins
