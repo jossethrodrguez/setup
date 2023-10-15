@@ -184,5 +184,6 @@ mv * latest/
 ```bash
 ~/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform;android-30.0.3"
 echo "export ANDROID_HOME=~/android-sdk" >> ~/.bashrc; source ~/.bashrc
+cd ~
 bash
 ```
