@@ -171,7 +171,8 @@ lspconfig.pyright.setup({
 type: ```:LspInfo``` 
 
 # Android Development withot Android Studio
-##1 - Download [Android Command line tools](https://developer.android.com/studio), then execute this script in ```Downloads/``` directory:
+## Setting enviroment
+Download [Android Command line tools](https://developer.android.com/studio), then execute this script in ```Downloads/``` directory:
 ```bash
 unzip commandlinetools-linux*.zip -d android-sdk
 mv android-sdk ~
@@ -188,4 +189,4 @@ cd ~
 bash
 ```
 Install [SDK manager](https://sdkman.io/install), and finally type ```sdk install gradle 7.5```
-## 2 - 
+## Creating Android Project
