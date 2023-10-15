@@ -38,7 +38,7 @@ echo "// list of repositories to find plugins
     //name of gradle project
     rootProject.name = 'myApps'
     //include sub-project in app folder
-    include 'app'" > ~/workspace/android-projects/NewApp/setting.gradle
+    include 'app'" > ~/workspace/android-projects/NewApp/settings.gradle
 
 echo "org.gradle.java.home = $JAVA_HOME" > ~/workspace/android-projects/NewApp/gradle.properties
 
