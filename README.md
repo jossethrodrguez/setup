@@ -173,7 +173,8 @@ type: ```:LspInfo```
 # Android Development withot Android Studio
 1 - Download [Android Command line tools](https://developer.android.com/studio), then execute this script in ```Downloads/``` directory:
 ```bash
-unzip commandlinetools-linux*.zip -d android-sdk;mv android-sdk ..
+unzip commandlinetools-linux*.zip -d android-sdk
+mv android-sdk ~
 mkdir ~/android-sdk/cmdline-tools/latest
 cd ~/android-sdk/cmdline-tools
 mv * latest/
