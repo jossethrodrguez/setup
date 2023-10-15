@@ -47,3 +47,12 @@ export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/python3
 
 export JAVA_HOME=/home/josseth/openjdk-21/
 export PATH=$JAVA_HOME/bin/:$PATH
+export ANDROID_HOME=~/android-sdk
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+alias newApp="~/newAppBuild.sh"
+
+
