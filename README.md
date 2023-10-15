@@ -261,7 +261,8 @@ android {
                     'proguard-rules.pro'
         }
     }
-}" > workspace/android-projects/NewApp/app/src/build.gradle
+}"
+> workspace/android-projects/NewApp/app/src/build.gradle
 
 echo "# Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
@@ -283,6 +284,7 @@ echo "# Add project specific ProGuard rules here.
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile" > workspace/android-projects/NewApp/app/src/proguard-rules.pro"
+#-renamesourcefileattribute SourceFile"
+ > workspace/android-projects/NewApp/app/src/proguard-rules.pro"
 ```
 
