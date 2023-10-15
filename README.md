@@ -187,5 +187,5 @@ echo "export ANDROID_HOME=~/android-sdk" >> ~/.bashrc; source ~/.bashrc
 cd ~
 bash
 ```
-Finally install [SDK manager](https://sdkman.io/install)
+Install [SDK manager](https://sdkman.io/install), and finally type ```sdk install gradle 7.5```
 ## 2 - 
