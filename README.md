@@ -190,8 +190,9 @@ bash
 ```
 Install [SDK manager](https://sdkman.io/install), and finally type ```sdk install gradle 7.5```
 ## Creating Android Project
+Paste this in ```.bashrc``` file
 ```bash
-mkdir workspace/android-projects/NewApp
+alias newApp="mkdir workspace/android-projects/NewApp
 mkdir workspace/android-projects/
 cd workspace/android-projects/NewApp
 gradle init
@@ -282,6 +283,6 @@ echo "# Add project specific ProGuard rules here.
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile" > workspace/android-projects/NewApp/app/src/proguard-rules.pro
+#-renamesourcefileattribute SourceFile" > workspace/android-projects/NewApp/app/src/proguard-rules.pro"
 ```
 
