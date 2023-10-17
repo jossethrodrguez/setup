@@ -36,7 +36,7 @@ echo "// list of repositories to find plugins
         }
     }
     //name of gradle project
-    rootProject.name = 'myApps'
+    rootProject.name = 'NewApp'
     //include sub-project in app folder
     include 'app'" > ~/workspace/android-projects/NewApp/settings.gradle
 

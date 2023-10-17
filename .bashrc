@@ -45,7 +45,7 @@ export PATH=$PATH:/home/josseth/nodejs/bin
 export PATH=$PATH:/home/josseth/sqlite3
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/python3
 
-export JAVA_HOME=/home/josseth/openjdk-21/
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$JAVA_HOME/bin/:$PATH
 export ANDROID_HOME=~/android-sdk
 
