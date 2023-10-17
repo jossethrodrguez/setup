@@ -189,3 +189,12 @@ cd ~
 bash
 ```
 Install [SDK manager](https://sdkman.io/install), and finally type ```sdk install gradle 7.5```
+
+# Install PHP
+```bash 
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt upgrade -y
+sudo apt install php
+```
