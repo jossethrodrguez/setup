@@ -198,3 +198,4 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install php
 ```
+# Install Docker [tutorial here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
