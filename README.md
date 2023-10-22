@@ -226,8 +226,34 @@ If you'd prefer that conda's base environment not be activated on startup, run t
 conda config --set auto_activate_base false
 ```
 
-create enviroment ```conda create --name <name> python=<python version>``` (if enviroment doesn't start run  run ```source ~/.bashrc```
-update conda ```conda update -n base c defaults conda```
-list enviroment ```conda env list```
-activate enviroment ```conda activate  <name>```; deactivate ```conda deactivate```
-list installed package ```conda list```
+- create enviroment ```conda create --name <name> python=<python version>``` (
+  if enviroment doesn't start run  run ```source ~/.bashrc```
+- update conda ```conda update -n base c defaults conda```
+- list enviroment ```conda env list```
+- activate enviroment ```conda activate  <name>```; deactivate ```conda deactivate```
+- list installed package ```conda list```
+
+## Jupyter notebook:
+```bash
+conda install -c anacoda jupyter
+```
+How to change the default browser used by the jupyter notebook in Linux:
+You can create jupyter_notebook_config.py by:
+```bash
+jupyter notebook --generate-config
+```
+Then you go to
+```bash
+~/.jupyter/jupyter_notebook_config.py
+```
+and change ```c.NotebookApp.browser = '' ``` (maybe line 210)  
+to for example:
+```bash
+c.NotebookApp.browser = '/usr/bin/google-chrome'
+```
+You can choose which ever browser is installed. 
+You'll find the path for example by typing ```which firefox``` 
+Do not forget to delete the #
+
+Run Jupyter notebook ```jupyter notebook```
+
