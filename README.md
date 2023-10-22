@@ -215,7 +215,7 @@ su - ${USER}
 groups
 sudo usermod -aG docker username
 ```
-# Install jupyter notebook:
+# Install jupyter notebook
 first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
 ```bash 
 ~/Downloads/Anaconda*.sh
@@ -233,7 +233,7 @@ conda config --set auto_activate_base false
 - activate enviroment ```conda activate  <name>```; deactivate ```conda deactivate```
 - list installed package ```conda list```
 
-## Jupyter notebook:
+## Jupyter notebook
 ```bash
 conda install -c anacoda jupyter
 ```
@@ -246,7 +246,7 @@ Then you go to
 ```bash
 ~/.jupyter/jupyter_notebook_config.py
 ```
-and change ```c.NotebookApp.browser = '' ``` (maybe line 210)  
+and change ```#c.NotebookApp.browser = '' ``` (maybe line 210)  
 to for example:
 ```bash
 c.NotebookApp.browser = '/usr/bin/google-chrome'
