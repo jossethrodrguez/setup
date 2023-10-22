@@ -215,3 +215,12 @@ su - ${USER}
 groups
 sudo usermod -aG docker username
 ```
+# Install jupyter notebook:
+first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
+```bash ~/Downloads/Anaconda*.sh ```
+
+If you'd prefer that conda's base environment not be activated on startup, run the following command when conda is activated:
+```bash conda config --set auto_activate_base false ```
+
+create enviroment ```conda create --name <name> python=<python version>``` (if enviroment doesn't start run  run ```source ~/.bashrc```
+activate enviroment ```conda activate  <name>```; deactivate ```conda deactivate```
