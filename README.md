@@ -198,3 +198,108 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install php
 ```
+# Install Docker [tutorial here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+```bash 
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+```
+## Executing Docker without ```sudo``` command
+```bash 
+sudo usermod -aG docker ${USER}
+su - ${USER}
+groups
+sudo usermod -aG docker username
+```
+## [Installing Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+To make sure you obtain the most updated stable version of Docker Compose
+you’ll download this software from its [official Github repository](https://github.com/docker/compose/releases).
+
+First, confirm the latest version available in their releases page. 
+At the time of this writing, the most current stable version is ```2.23.0.```.
+
+The following command will download the ```2.23.0``` release 
+and save the executable file at ```/usr/local/bin/docker-compose```, 
+which will make this software globally accessible as ```docker-compose```:
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+Next, set the correct permissions so that the docker-compose command is executable:
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+To verify that the installation was successful, you can run:
+```bash
+docker-compose --version
+```
+
+```# Install jupyter notebook
+first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
+```bash 
+~/Downloads/Anaconda*.sh
+```
+
+If you'd prefer that conda's base environment not be activated on startup, run the following command when conda is activated:
+```bash 
+conda config --set auto_activate_base false
+```
+
+- create enviroment ```conda create --name <name> python=<python version>``` (
+  if enviroment doesn't start run  run ```source ~/.bashrc```
+- update conda ```conda update -n base c defaults conda```
+- list enviroment ```conda env list```
+- activate enviroment ```conda activate  <name>```; deactivate ```conda deactivate```
+- list installed package ```conda list```
+
+## Jupyter notebook
+```bash
+conda install -c anacoda jupyter
+```
+How to change the default browser used by the jupyter notebook in Linux:
+You can create jupyter_notebook_config.py by:
+```bash
+jupyter notebook --generate-config
+```
+Then you go to
+```bash
+~/.jupyter/jupyter_notebook_config.py
+```
+and change ```#c.NotebookApp.browser = '' ``` (maybe line 210)  
+to for example:
+```bash
+c.NotebookApp.browser = '/usr/bin/google-chrome'
+```
+You can choose which ever browser is installed. 
+You'll find the path for example by typing ```which firefox``` 
+Do not forget to delete the #
+
+Run Jupyter notebook ```jupyter notebook```
+
+# Install NGINX
+Update package information for configured sources and install some packages that
+will assist in configuring the official NGINX package repository:
+```bash
+sudo apt-get update
+sudo apt install -y curl gnupg2 ca-certificates lsb-release debian-archive-keyring
+```
+Download and save the NGINX signing key:
+```bash 
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+```
+Use lsb_release to set variables defining the OS and release names, then create an apt source file:
+```bash
+OS=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
+RELEASE=$(lsb_release -cs)
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/${OS} ${RELEASE} nginx" | tee /etc/apt/sources.list.d/nginx.list
+```
+Update package information once more, then install NGINX:
+```bash
+sudo apt-get update
+sudo apt-get install -y nginx
+nginx
+```
