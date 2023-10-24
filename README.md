@@ -215,7 +215,34 @@ su - ${USER}
 groups
 sudo usermod -aG docker username
 ```
-# Install jupyter notebook
+## [Installing Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+To make sure you obtain the most updated stable version of Docker Compose
+you’ll download this software from its official Github repository.
+
+First, confirm the latest version available in their releases page. 
+At the time of this writing, the most current stable version is ```2.23.0.```.
+
+The following command will download the ```2.23.0``` release 
+and save the executable file at ```/usr/local/bin/docker-compose```, 
+which will make this software globally accessible as ```docker-compose```:
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+Next, set the correct permissions so that the docker-compose command is executable:
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+To verify that the installation was successful, you can run:
+```bash
+docker-compose --version
+```
+```bash
+
+```
+
+```bash
+
+```# Install jupyter notebook
 first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
 ```bash 
 ~/Downloads/Anaconda*.sh
