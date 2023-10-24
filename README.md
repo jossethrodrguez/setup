@@ -226,8 +226,9 @@ The following command will download the ```2.23.0``` release
 and save the executable file at ```/usr/local/bin/docker-compose```, 
 which will make this software globally accessible as ```docker-compose```:
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
+
 Next, set the correct permissions so that the docker-compose command is executable:
 ```bash
 sudo chmod +x /usr/local/bin/docker-compose
@@ -236,11 +237,6 @@ To verify that the installation was successful, you can run:
 ```bash
 docker-compose --version
 ```
-```bash
-
-```
-
-```bash
 
 ```# Install jupyter notebook
 first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
