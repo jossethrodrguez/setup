@@ -217,7 +217,7 @@ sudo usermod -aG docker username
 ```
 ## [Installing Docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
 To make sure you obtain the most updated stable version of Docker Compose
-you’ll download this software from its official Github repository.
+you’ll download this software from its [official Github repository](https://github.com/docker/compose/releases).
 
 First, confirm the latest version available in their releases page. 
 At the time of this writing, the most current stable version is ```2.23.0.```.
