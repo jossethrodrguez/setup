@@ -196,7 +196,7 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt upgrade -y
-sudo apt install php
+sudo apt install php php-fpm
 ```
 # Install Docker [tutorial here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 ```bash 
