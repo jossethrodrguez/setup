@@ -320,3 +320,12 @@ brew install mysql
 # Or, if you don't want/need a background service you can just run:
 #  /home/linuxbrew/.linuxbrew/opt/mysql/bin/mysqld_safe --datadir\=/home/linuxbrew/.linuxbrew/var/mysql
 ```
+## Install MySQL workbench
+```bash 
+# Install Snap package manager
+sudo apt update
+sudo apt install snapd
+
+# Install MySQL Workbench
+sudo snap install mysql-workbench-community
+```
