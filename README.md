@@ -328,4 +328,9 @@ sudo apt install snapd
 
 # Install MySQL Workbench
 sudo snap install mysql-workbench-community
+
+#
+error Cannot Connect to Database Server solution:
+sudo snap connect mysql-workbench-community:password-manager-service
+sudo snap connect mysql-workbench-community:ssh-keys
 ```
