@@ -1,5 +1,3 @@
-# What to do first:
-
 # Setup
 (**Important**: First install [**Git**](#git) and link to [**GitHub**](#linking_to_github) account) (instruction below)
 1. Clone this repository in home directory (`/home/<user>/` or `~`)
@@ -7,6 +5,7 @@
 3. Move the `.bashrc` of this repository to home directory
 5. Finally move each file in this repo, one by one but left `.git` directory until the end, and delete the directory of this repository
    
+
 If you have a local clone, you can update it by running the following commands.
 ```bash
 git branch -m main setup
