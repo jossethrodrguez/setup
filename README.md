@@ -21,7 +21,7 @@ sudo apt install software-properties-common
 
 - [Setup](#setup)
 - [Git](#git)
-  - [Linking to Github][#Linking_to_Github]
+  - [Linking to Github](#Linking_to_Github)
 - [Node.js](#nodejs)
 - [Neovim](#neovim)
 
