@@ -21,7 +21,7 @@ sudo apt install software-properties-common
 
 - [Setup](#setup)
 - [Git](#git)
-  - [Linking to Github](#Linking to Github)
+  - [Linking to Github][#Linking_to_Github]
 - [Node.js](#nodejs)
 - [Neovim](#neovim)
 
@@ -53,7 +53,7 @@ git config --global alias.superlog "log --graph --abbrev-commit --decorate --dat
 # check config:
 git config -l
 ```
-## Linking to Github
+## Linking_to_Github
 ```bash
 # on main directory use:
 ssh-keygen -t rsa -b 4096 -C <emailOnGithub>
