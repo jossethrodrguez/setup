@@ -1,5 +1,5 @@
-what to do:
-0. Install and config _git_ (commands below)
+# What to do first:
+0. Install and config _[Git]_(#git)(commands below)
 1. clone this repo in main directory
 2. if you have files with this names, chage it name, for example: [file]_backup
 3. mv each file from _setup_ directory to _main_. including _.git/_ directory
