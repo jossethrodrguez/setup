@@ -238,7 +238,7 @@ To verify that the installation was successful, you can run:
 docker-compose --version
 ```
 
-```# Install jupyter notebook
+# Install jupyter notebook
 first install [anaconda](https://www.anaconda.com/download). once it is downloaded run:
 ```bash 
 ~/Downloads/Anaconda*.sh
