@@ -1,10 +1,12 @@
 # What to do first:
-0. Install and config [**Git**](#git) (instruction below)
-1. clone this repo in main directory
-2. if you have files with this names, chage it name, for example: [file]_backup
-3. mv each file from _setup_ directory to _main_. including _.git/_ directory
-4. install depencies (shown below, like brew, ruby, node, etc)
 
+# Setup
+(**Important**: First install [**Git**](#git) and link to [**GitHub**](#linking_to_github) account) (instruction below)
+1. Clone this repository in home directory (`/home/<user>/` or `~`)
+2. Change the name of the older `.bashrc` file to `.bashrc.backup`
+3. Move the `.bashrc` of this repository to home directory
+5. Finally move each file in this repo, one by one but left `.git` directory until the end, and delete the directory of this repository
+   
 If you have a local clone, you can update it by running the following commands.
 ```bash
 git branch -m main setup
@@ -25,14 +27,6 @@ sudo apt install software-properties-common
 - [Node.js](#nodejs)
 - [Neovim](#neovim)
 
-  
-# Setup
-(**Important**: First install **Git** and link to **GitHub** account)
-1. clone this repository in home directory (`/home/<user>/` or `~`)
-2. change the name of the older `.bashrc` file to `.bashrc.backup`
-3. move the `.bashrc` of this repository to home directory
-4. move `nvim` directory of this repository to the home `.config` repository, then move out `nvim` directory and remove the empty `.config` directory
-5. finally move each file in this repo, one by one but left `.git` directory until the end, and delete the directory of this repository
 
 
 # [Git](https://git-scm.com/)
