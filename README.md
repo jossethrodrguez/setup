@@ -114,7 +114,7 @@ Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/sta
 ### LSP config:
 #### Installing Mason package manager:
 Add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
-```neovim
+```lua
 local plugins = {
   {
     "rcarriga/nvim-dap-ui",
@@ -182,10 +182,7 @@ local plugins = {
 }
 return plugins
 ```
-#### Code suggestions and autocomplete:
-
-
-and add ```M.plugins = "custom.plugins``` to ```chadrc.lua``` file in the same folder.
+Add ```M.plugins = "custom.plugins"``` to ```chadrc.lua``` file in the same folder.
 restart neovim, and type: ```:MasonInstallAll``` command.
 
 create a file ```~/.config/nvim/lua/custom/```, paste:
