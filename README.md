@@ -108,9 +108,10 @@ export PATH=$PATH: <route>
 ```
 
 # [Neovim](https://neovim.io/)
-install a [NerdFont](https://www.nerdfonts.com/font-downloads)
+Install a [NerdFont](https://www.nerdfonts.com/font-downloads)
 use ```fc-list``` to check already fonts installed, and add new fonts to ```/usr/fonts/``` path
-we are using [NvChad](https://nvchad.com/docs/quickstart/install), install ripgrep first
+we are using [NvChad](https://nvchad.com/docs/quickstart/install), **install ripgrep first**
+
 Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/stable) and download `nvim.appimage` and this file to `/usr/bin/nvim` using `sudo` privilege.
 ## NvChad commands:
 - ```<spc> th```: choose theme
