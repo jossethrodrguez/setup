@@ -71,17 +71,6 @@ ssh-add .ssh/id_rsa
 # Run brew help to get started
 # Further documentation:
     https://docs.brew.sh
-
-openjdk@17 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
-because this is an alternate version of another formula.
-
-If you need to have openjdk@17 first in your PATH, run:
-  echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@17/bin:$PATH"' >> ~/.profile
-
-For compilers to find openjdk@17 you may need to set:
-  export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openjdk@17/include"
-
-
 ```
 
 # [Node.js](https://nodejs.org/en/)
