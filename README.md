@@ -111,45 +111,6 @@ Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/sta
 ### Windows navigation:
 - :vsp, :sp open windows (<CTRL> h, j, k, l)
 - <spc> h, v : open terminal window 
-### LSP config:
-#### Installing Mason package manager:
-Add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
-```lua
-local plugins = {
-    {
-        "williamboman/mason.nvim",
-        opts = {
-                ensure_installed = {
-                    "pyright"
-            },
-        },
-    },   
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
-        end,
-```
-Add ```M.plugins = "custom.plugins"``` to ```chadrc.lua``` file in the same folder.
-restart neovim, and type: ```:MasonInstallAll``` command.
-
-create a file ```~/.config/nvim/lua/custom/lspconfig.lua```, paste:
-```lua
-local config = require("plugins.configs.lspconfig")
-
-local on_attach = config.on_attach
-local capabilities = config.capabilities
-
-local lspconfig = require("lspconfig")
-
-lspconfig.pyright.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"python"},
-})
-```
-type: ```:LspInfo``` 
 
 # Android Development withot Android Studio
 ## Setting enviroment
