@@ -185,7 +185,7 @@ return plugins
 Add ```M.plugins = "custom.plugins"``` to ```chadrc.lua``` file in the same folder.
 restart neovim, and type: ```:MasonInstallAll``` command.
 
-create a file ```~/.config/nvim/lua/custom/```, paste:
+create a file ```~/.config/nvim/lua/custom/lspconfig.lua```, paste:
 ```
 local config = require("plugins.configs.lspconfig")
 
@@ -195,9 +195,9 @@ local capabilities = config.capabilities
 local lspconfig = require("lspconfig")
 
 lspconfig.pyright.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetype = {"python"},
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
 })
 ```
 type: ```:LspInfo``` 
