@@ -71,17 +71,6 @@ ssh-add .ssh/id_rsa
 # Run brew help to get started
 # Further documentation:
     https://docs.brew.sh
-
-openjdk@17 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
-because this is an alternate version of another formula.
-
-If you need to have openjdk@17 first in your PATH, run:
-  echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@17/bin:$PATH"' >> ~/.profile
-
-For compilers to find openjdk@17 you may need to set:
-  export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openjdk@17/include"
-
-
 ```
 
 # [Node.js](https://nodejs.org/en/)
@@ -108,9 +97,10 @@ export PATH=$PATH: <route>
 ```
 
 # [Neovim](https://neovim.io/)
-install a [NerdFont](https://www.nerdfonts.com/font-downloads)
+Install a [NerdFont](https://www.nerdfonts.com/font-downloads)
 use ```fc-list``` to check already fonts installed, and add new fonts to ```/usr/fonts/``` path
-we are using [NvChad](https://nvchad.com/docs/quickstart/install), install ripgrep first
+we are using [NvChad](https://nvchad.com/docs/quickstart/install), **install ripgrep first**
+
 Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/stable) and download `nvim.appimage` and this file to `/usr/bin/nvim` using `sudo` privilege.
 ## NvChad commands:
 - ```<spc> th```: choose theme
@@ -122,8 +112,9 @@ Go to [The nvim documentation](https://github.com/neovim/neovim/releases/tag/sta
 - :vsp, :sp open windows (<CTRL> h, j, k, l)
 - <spc> h, v : open terminal window 
 ### LSP config:
-add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
-```neovim
+#### Installing Mason package manager:
+Add new file called ```plugins.lua``` in: ```~/.config/nvim/lua/custom/```. and add the next lines:
+```lua
 local plugins = {
     {
         "williamboman/mason.nvim",
@@ -139,15 +130,12 @@ local plugins = {
             require "plugins.configs.lspconfig"
             require "custom.configs.lspconfig"
         end,
-    },
-}
-return plugins
 ```
-and add ```M.plugins = "custom.plugins``` to ```chadrc.lua``` file in the same folder.
+Add ```M.plugins = "custom.plugins"``` to ```chadrc.lua``` file in the same folder.
 restart neovim, and type: ```:MasonInstallAll``` command.
 
-create a file ```~/.config/nvim/lua/custom/```, paste:
-```
+create a file ```~/.config/nvim/lua/custom/lspconfig.lua```, paste:
+```lua
 local config = require("plugins.configs.lspconfig")
 
 local on_attach = config.on_attach
@@ -156,9 +144,9 @@ local capabilities = config.capabilities
 local lspconfig = require("lspconfig")
 
 lspconfig.pyright.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetype = {"python"},
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
 })
 ```
 type: ```:LspInfo``` 
